@@ -1,0 +1,11 @@
+/node_modules/
+/dist/
+/dist-native/
+/src-tauri/target/
+/installer-integration/runtime/*.dll
+/display-integration/native/build/
+/vehicle-integration/catalog.json
+/sandbox-integration/stock-cars.json
+/conditions-integration/fixtures/
+*.log
+*.dmp

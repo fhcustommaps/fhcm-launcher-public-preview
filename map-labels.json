@@ -1,0 +1,14 @@
+{
+  "pacific": {
+    "name": "PCH + OCR",
+    "region": "Pacific Coast Highway & Old Coast Road (Paved)",
+    "img": "/img/pch-placeholder.png",
+    "artworkPlaceholder": true
+  },
+  "gunsai": {
+    "name": "Gunsai + Road 272",
+    "region": "Gumma Cycle Sports Center Touge",
+    "img": "/img/gunsai-placeholder.png",
+    "artworkPlaceholder": true
+  }
+}

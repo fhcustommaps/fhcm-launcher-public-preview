@@ -1,0 +1,18 @@
+function FirstRunSetup(){
+ const [form,setForm]=React.useState({game:'',runtime:'',content:'',destination:window.FHCM_RUNTIME.destination});
+ const [busy,setBusy]=React.useState(false),[error,setError]=React.useState(''),[progress,setProgress]=React.useState('');
+ React.useEffect(()=>{if(!busy)return;const timer=setInterval(()=>invoke('setup_progress').then(setProgress).catch(()=>{}),1000);return()=>clearInterval(timer)},[busy]);
+ const browse=async key=>{try{const selected=await invoke('pick_setup_folder');if(selected)setForm(v=>({...v,[key]:key==='destination'?selected+'\\FHCM Library':selected}));}catch(e){setError(String(e))}};
+ const finish=async()=>{setBusy(true);setError('');setProgress('Checking your installationâ€¦');try{await invoke('complete_setup',{request:form});window.location.reload()}catch(e){setError(String(e));setBusy(false)}};
+ const inputStyle={flex:1,minWidth:0,background:'#191b1f',color:'#fff',border:'1px solid #41444b',padding:'12px',fontSize:13};
+ return <div style={{height:'100vh',background:'#101114',color:'#fff',fontFamily:'Arial,sans-serif',overflow:'auto'}}>
+  <header data-tauri-drag-region style={{height:54,display:'flex',alignItems:'center',padding:'0 24px',borderBottom:'1px solid #303239'}}><strong>FHCM Â· COMMUNITY PREVIEW</strong><span data-tauri-drag-region style={{flex:1,height:'100%'}}/><button aria-label="Close setup" onClick={()=>getCurrentWindow().close()} style={{background:'transparent',border:0,color:'#fff',fontSize:22}}>Ã—</button></header>
+  <main style={{maxWidth:800,margin:'45px auto',padding:'0 28px 40px'}}><h1 style={{fontSize:36,marginBottom:12}}>Welcome to FHCM</h1><p style={{color:'#b8bac1',lineHeight:1.65}}>Connect your existing FH2 installation. FHCM creates a separate copy for custom maps and copies your save into it. Your original game and save stay in place.</p>
+   <fieldset disabled={busy} style={{border:0,padding:0,margin:0}}>{[['game','FH2 game folder','The folder containing Mount/forza_durango_release_final.exe'],['runtime','Azimuth folder','The folder containing azimuth.exe and your existing save'],['content','Storm Island folder Â· optional','Select your installed DLC package if you use Storm Island'],['destination','New FHCM library folder','Choose a new folder with enough room for a full independent game copy']].map(([key,label,hint])=><label key={key} style={{display:'block',margin:'24px 0'}}><strong style={{fontSize:14}}>{label}</strong><div style={{display:'flex',gap:10,margin:'9px 0'}}><input aria-label={label} value={form[key]} onChange={e=>setForm(v=>({...v,[key]:e.target.value}))} style={inputStyle}/><button onClick={()=>browse(key)} type="button" style={{background:'#25272d',color:'#fff',border:'1px solid #41444b',padding:'0 18px'}}>Browse</button></div><small style={{color:'#989ca7'}}>{hint}</small></label>)}</fieldset>
+   <p style={{fontSize:12,color:'#a7aab3',lineHeight:1.6}}>Setup uses your locally installed game and Azimuth; neither is included in this installer. Start FH2 in Azimuth once before setup so a personal save exists. Map ZIPs are imported after setup. Use a controller for the first drive.</p>
+   {error&&<p role="alert" style={{color:'#ff9eac',whiteSpace:'pre-wrap'}}>{error}</p>}{busy&&<p role="status" style={{color:'#ffbd43'}}>{progress}</p>}
+   <button disabled={busy||!form.game||!form.runtime||!form.destination} onClick={finish} style={{marginTop:12,padding:'16px 28px',border:0,fontWeight:800,fontSize:16,color:'#fff',background:busy?'#444':'linear-gradient(100deg,#ffb520,#ff218f)',cursor:busy?'progress':'pointer'}}>{busy?'PREPARING YOUR LIBRARYâ€¦':'CREATE FHCM LIBRARY â€º'}</button>
+   <p style={{fontSize:11,color:'#777d8b',marginTop:25}}>FHCM v0.2.1 Â· Community preview</p>
+  </main>
+ </div>;
+}

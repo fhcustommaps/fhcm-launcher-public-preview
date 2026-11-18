@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FHCM V1 portable map package",
+  "type": "object",
+  "required": [
+    "format",
+    "schema",
+    "adapter",
+    "id",
+    "name",
+    "region",
+    "version",
+    "conditionState",
+    "spawnPosition",
+    "spawnFacing",
+    "visibilityModuleSha256",
+    "files"
+  ],
+  "properties": {
+    "format": {
+      "const": "fhcm-map"
+    },
+    "schema": {
+      "const": 1
+    },
+    "adapter": {
+      "const": "homespace02-v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]{1,40}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "conditionState": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_]+$"
+    },
+    "spawnPosition": {
+      "type": "string"
+    },
+    "spawnFacing": {
+      "type": "string"
+    },
+    "visibilityModuleSha256": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "artworkPlaceholder": {
+      "type": "boolean"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50000,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "kind",
+          "target",
+          "size",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "game",
+              "module",
+              "data",
+              "artwork",
+              "provenance"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 8589934592
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          }
+        }
+      }
+    }
+  }
+}

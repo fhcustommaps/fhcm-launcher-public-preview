@@ -1,0 +1,93 @@
+:root{
+/* Brand — sampled from the supplied FHCM logo gradient */
+--fh-gold:#FAB216;
+--fh-orange:#F6914A;
+--fh-coral:#F26E7A;
+--fh-rose:#F05C82;
+--fh-pink:#EC2392;
+--fh-pink-700:#C4127A;
+--fh-gold-700:#B97F00;
+--gradient-horizon:linear-gradient(135deg,#FAB216 0%,#F26E7A 50%,#EC2392 100%); /* @kind color */
+--gradient-horizon-h:linear-gradient(90deg,#FAB216 0%,#F26E7A 50%,#EC2392 100%); /* @kind color */
+/* Neutrals — deep charcoal to clean white, restrained */
+--neutral-950:#0E0F11;
+--neutral-900:#15161A;
+--neutral-850:#1C1D22;
+--neutral-800:#24262C;
+--neutral-700:#33353D;
+--neutral-600:#4A4D57;
+--neutral-500:#6B6E78;
+--neutral-400:#92959E;
+--neutral-300:#B9BBC2;
+--neutral-200:#DADBDF;
+--neutral-100:#EDEEF0;
+--neutral-50:#F6F6F7;
+--white:#FFFFFF;
+/* Status */
+--green-500:#22B573;
+--green-300:#4FD99A;
+--red-500:#E5384A;
+--red-300:#FF6B78;
+--blue-500:#2F8FE0;
+--blue-300:#6CB8FF;
+
+/* Semantic — light editorial (default) */
+--surface-page:var(--white);
+--surface-raised:var(--white);
+--surface-card:var(--white);
+--surface-sunken:var(--neutral-50);
+--surface-hover:var(--neutral-100);
+--surface-inverse:var(--neutral-950);
+--border-subtle:var(--neutral-100);
+--border-default:var(--neutral-200);
+--border-strong:var(--neutral-400);
+--text-primary:var(--neutral-950);
+--text-secondary:var(--neutral-600);
+--text-muted:var(--neutral-500);
+--text-inverse:var(--white);
+--text-accent:var(--fh-pink-700);
+--accent:var(--fh-pink);
+--accent-hover:#D81B84;
+--accent-press:var(--fh-pink-700);
+--accent-soft:rgba(236,35,146,0.10);
+--focus-ring:var(--fh-pink);
+--status-released:var(--green-500);
+--status-dev:var(--fh-gold-700);
+--status-planned:var(--neutral-500);
+--status-success:var(--green-500);
+--status-warning:var(--fh-gold-700);
+--status-danger:var(--red-500);
+--status-info:var(--blue-500);
+--placeholder-bg:var(--neutral-100);
+--placeholder-fg:var(--neutral-500);
+}
+/* Immersive charcoal — gameplay, atlas, media. Apply data-theme="dark" to any section. */
+[data-theme="dark"]{
+--surface-page:var(--neutral-950);
+--surface-raised:var(--neutral-900);
+--surface-card:var(--neutral-900);
+--surface-sunken:#0A0B0C;
+--surface-hover:var(--neutral-800);
+--surface-inverse:var(--white);
+--border-subtle:rgba(255,255,255,0.08);
+--border-default:rgba(255,255,255,0.14);
+--border-strong:rgba(255,255,255,0.32);
+--text-primary:var(--white);
+--text-secondary:var(--neutral-300);
+--text-muted:var(--neutral-400);
+--text-inverse:var(--neutral-950);
+--text-accent:var(--fh-coral);
+--accent-soft:rgba(236,35,146,0.18);
+--focus-ring:var(--fh-gold);
+--status-released:var(--green-300);
+--status-dev:var(--fh-gold);
+--status-planned:var(--neutral-400);
+--status-success:var(--green-300);
+--status-warning:var(--fh-gold);
+--status-danger:var(--red-300);
+--status-info:var(--blue-300);
+--placeholder-bg:var(--neutral-850);
+--placeholder-fg:var(--neutral-400);
+/* Performance Index classes — fixed across themes */
+--pi-d:#3FB4E6;--pi-c:#F2C21B;--pi-b:#F28A1E;--pi-a:#DC2F3A;--pi-s1:#9147D6;--pi-s2:#2F5BD9;--pi-x:#1E9E4A;
+}

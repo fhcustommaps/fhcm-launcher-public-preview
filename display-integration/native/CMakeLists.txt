@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.20)
+project(FHCMDisplay LANGUAGES CXX)
+add_library(FHCMDisplay SHARED display.cpp)
+target_include_directories(FHCMDisplay PRIVATE ../../runtime-fixes/pch-startup/platform/include)
+set_property(TARGET FHCMDisplay PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")

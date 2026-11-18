@@ -1,0 +1,15 @@
+pool_budget=14
+ahead_target=14
+oncoming_target=7
+streaming=1
+lane_changes=0
+driver_profiles=1
+brake_events=0
+cruise_mph=35
+recovery=0
+minimum_gap_m=30
+paint_enabled=1
+initial_front_m=120
+initial_spacing_m=58
+recycle_near_m=250
+recycle_far_m=460

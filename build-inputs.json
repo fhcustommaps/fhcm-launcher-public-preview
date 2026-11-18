@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "installer-integration/runtime/DevLabVisibility.dll",
+      "sha256": "b5061383ed7b427e6c2562b970d175d74266c3d7842b7c8dd21f07b31ce4ad9d",
+      "size": 1119232
+    },
+    {
+      "path": "installer-integration/runtime/DevLabKeyboard.dll",
+      "sha256": "99d347b75d12d66b2a03c39392b9eea124d5806457036cf8c09bbc8ba4c2b2b9",
+      "size": 1121280
+    },
+    {
+      "path": "installer-integration/runtime/d3dcompiler_47.dll",
+      "sha256": "2627283b0acc7b1a0ab9415dfbec6597c268f48af334ef7dcd6532d6c64fc887",
+      "size": 1462784
+    },
+    {
+      "path": "display-integration/native/build/Release/FHCMDisplay.dll",
+      "sha256": "9982b00666f31dda11d82c2b506bc850a58ee8fce6f61608ce19eb004b7eb219",
+      "size": 113152
+    },
+    {
+      "path": "vehicle-integration/catalog.json",
+      "sha256": "1879bb05aa30b16aea4ac4788d169ae3d5fc6c41e991532e3611af876b199b73",
+      "size": 92206
+    },
+    {
+      "path": "sandbox-integration/stock-cars.json",
+      "sha256": "21487f8ecec1905fff715e5b0b18b2375bc72a64a9345135d2aa5e09fc0a66a7",
+      "size": 1001505
+    },
+    {
+      "path": "conditions-integration/fixtures/pacific.xml",
+      "sha256": "1f5fa7b7ec80a85dbfbb7ec18833840e372bbbabc6a40ca3d62a06c38f403bf6",
+      "size": 31600
+    },
+    {
+      "path": "conditions-integration/fixtures/gunsai.xml",
+      "sha256": "fa145214cb2805295fd82eeddddb554ce15f20b532e161e4f6545ce1569d160a",
+      "size": 32079
+    }
+  ]
+}
